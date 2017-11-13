@@ -1,40 +1,17 @@
 <?php
+//setcookie("name", "Luiza");
+echo "Hello ".$_COOKIE["name"];
 
-function nameFunction($param){
-    //action
+setcookie("color", "blue", time()+3600);
 
-    //return
-}
 
-function calc($num1, $num2, $op){
-    if($op=="+"){
-        return $num1+$num2;
-    }
-    else if($op=="-"){
-        return $num1-$num2;
-    }
-    else if($op=="*"){
-        return $num1*$num2;
-    }
-    else if ($op=="/"){
-        return $num1/$num2;
-    }
-    else
-    return "Erro!";
-}
 
-echo calc(4, 6, "+");
-echo "<br/>";
-
-echo calc(4, 3, "-");
-echo "<br/>";
-
-echo calc(2, 4, "*");
-echo "<br/>";
-
-echo calc(3, 2, "/");
-echo "<br/>";
-
-echo calc(3, 2, "a");
-echo "<br/>";
 ?>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body bgcolor="<?= $_COOKIE['color'] ?>">
+        
+    </body>
+</html>
