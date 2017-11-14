@@ -1,16 +1,27 @@
-//Utiliza o secret.php
 <?php
-session_start();
-
-$login="admin";
-$password="123456";
-
-if($login == "admin" && $password == "123456"){
-    $_SESSION['login'] = true;
-    echo"Success";
-}else{
-    echo "Error";
-}
+//echo $_POST['name'];
+echo $_GET['name'];
 
 ?>
-<a href="secret.php">Get in</a>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Working with form</title>
+        
+    </head>
+    <body>
+        <form action="index.php" method="get">
+            <label for="">Name: </label>
+            <input type="text" name="name" value="<?=$_GET['name']?>">
+            
+            <label for="">Email: </label>
+            <input type="text" name="email" value="<?=$_GET['email']?>">
+            
+            <label for="">Message: </label>
+            <textarea name="message"><?=$_GET['message']?></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+
