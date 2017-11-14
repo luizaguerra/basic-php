@@ -1,17 +1,16 @@
+//Utiliza o secret.php
 <?php
-//setcookie("name", "Luiza");
-echo "Hello ".$_COOKIE["name"];
+session_start();
 
-setcookie("color", "blue", time()+3600);
+$login="admin";
+$password="123456";
 
-
+if($login == "admin" && $password == "123456"){
+    $_SESSION['login'] = true;
+    echo"Success";
+}else{
+    echo "Error";
+}
 
 ?>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body bgcolor="<?= $_COOKIE['color'] ?>">
-        
-    </body>
-</html>
+<a href="secret.php">Get in</a>
